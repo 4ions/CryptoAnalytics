@@ -46,7 +46,37 @@ El beneficio potencial dependerá de la magnitud de la diferencia porcentual y e
 - Muestra la salida de la predicción junto con una breve explicación del método utilizado y cualquier consideración relevante.
 
 ### Ejecucion
-Debido a la complejidad, se uso python para realizar la creacion, entrenamiento y genrerar la solucion.
+Debido a la complejidad, se uso python para realizar la creacion, entrenamiento y generar la solucion.
+
+El codigo esta alojado en [Google Colab](https://colab.research.google.com/drive/1vzaEqjcv0Pd7pHTWjbObHnvIo0_gkPBn?usp=sharing)
+
+### Detalles
+
+El método utilizado para predecir el precio del Bitcoin en este código es una Red Neuronal Recurrente (RNN) con Long Short-Term Memory (LSTM). Aquí está el desglose de cómo funciona:
+
+- Recopilación de datos: El código comienza recopilando datos de precios de Bitcoin desde el 01-01-2020 hasta el 08-03-2023 utilizando la API de CoinGecko. Los datos se almacenan en un DataFrame de pandas.
+
+- Preprocesamiento de datos: Los datos de precios se escalan a un rango de 0 a 1 utilizando MinMaxScaler para facilitar el entrenamiento de la red neuronal. Luego, se crea una estructura de datos con 60 pasos de tiempo y 1 salida. Esto significa que para predecir el precio en un momento dado, la red utilizará los precios de los 60 momentos anteriores.
+
+- Construcción del modelo: Se construye un modelo de RNN con 4 capas LSTM y capas de Dropout después de cada capa LSTM para prevenir el sobreajuste. La última capa es una capa densa que predice el precio del Bitcoin.
+
+- Entrenamiento del modelo: El modelo se entrena con los datos preprocesados durante 100 épocas.
+
+- Predicción de precios: Para predecir los precios, se toman los últimos 60 días de precios de cierre y se alimentan al modelo para predecir el precio del próximo día. Este proceso se repite 10 veces para predecir los precios de los próximos 10 días.
+
+- Visualización de resultados: Finalmente, los precios predichos se grafican junto con los precios actuales para visualizar el rendimiento del modelo.
+
+#### Posibles mejoras:
+
+- Aumentar los datos de entrenamiento: Si es posible, obtener más datos históricos podría mejorar la precisión del modelo.
+
+- Ajuste de hiperparámetros: Podría ser útil experimentar con diferentes configuraciones de la red, como el número de capas LSTM, el número de unidades en cada capa, la tasa de dropout, el optimizador y la función de pérdida.
+
+- Incorporar más características: Además del precio, podrían incluirse otras características como el volumen de transacciones, los datos de sentimiento de las redes sociales, etc.
+
+- Validación cruzada: Podría ser útil implementar una validación cruzada para evaluar mejor el rendimiento del modelo.
+
+- Uso de modelos más avanzados: Podría ser útil experimentar con modelos más avanzados como las Redes Neuronales Convolucionales (CNN) o los Transformers, que han demostrado un buen rendimiento en tareas de series temporales.
 
 ----
 ## License
