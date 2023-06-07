@@ -29,9 +29,12 @@ Se mostrara en orden una lista descendente las cryptos en los cuales su diferenc
 
 ### Utilidad
 
+
 En términos de arbitraje, la diferencia porcentual entre los precios de las criptomonedas en diferentes plataformas puede proporcionar oportunidades de arbitraje. El arbitraje implica comprar una criptomoneda en una plataforma donde su precio es más bajo y venderla en otra plataforma donde su precio es más alto, obteniendo así un beneficio por la diferencia de precios.
 En este caso, el programa identifica las criptomonedas que tienen diferencias de precios entre Binance y Crypto.com, y muestra aquellas con la mayor diferencia porcentual. Si se detecta una diferencia significativa, un posible enfoque para aprovecharla sería comprar la criptomoneda en la plataforma donde tiene el precio más bajo (por ejemplo, Crypto.com) y venderla en la plataforma donde tiene el precio más alto (por ejemplo, Binance).
 El beneficio potencial dependerá de la magnitud de la diferencia porcentual y el volumen de la transacción. Cuanto mayor sea la diferencia y mayor sea el volumen de la transacción, mayor será el beneficio potencial.
+
+
 ---
 ## Segunda parte - Predicción de precio de Bitcoin
 ---
